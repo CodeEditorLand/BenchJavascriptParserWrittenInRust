@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>Boshen/renovate"],
+  "schedule": ["before 8am"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["oxc"],
+      "groupName": "oxc"
+    },
+    {
+      "matchPackagePatterns": ["swc"],
+      "groupName": "swc"
+    },
+    {
+      "matchPackagePatterns": ["biome"],
+      "groupName": "biome"
+    }
+  ]
+}
