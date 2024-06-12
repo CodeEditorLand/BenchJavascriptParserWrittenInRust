@@ -4,6 +4,6 @@
 		"table": "node table.mjs"
 	},
 	"devDependencies": {
-		"markdown-table": "^3.0.3"
+		"markdown-table": "3.0.3"
 	}
 }
