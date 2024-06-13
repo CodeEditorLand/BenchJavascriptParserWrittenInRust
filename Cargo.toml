@@ -8,18 +8,22 @@ publish = false
 name = "parser"
 harness = false
 
-[profile.release]
-opt-level     = 3
-lto           = "fat"
-codegen-units = 1
-strip         = "symbols"
-debug         = false
-panic         = "abort"
+[[bin]]
+name = "oxc"
+path = "src/oxc.rs"
+
+[[bin]]
+name = "swc"
+path = "src/swc.rs"
+
+[[bin]]
+name = "biome"
+path = "src/biome.rs"
 
 [dependencies]
-oxc = "0.13.5"
+oxc = "0.14.0"
 
-swc_ecma_parser = { version = "0.144.2", features = ["typescript"] }
+swc_ecma_parser = { version = "0.144.3", features = ["typescript"] }
 swc_ecma_ast = "0.113.7"
 
 biome_js_parser = "0.5.7"
@@ -32,3 +36,11 @@ mimalloc = "0.1.42"
 
 [features]
 codspeed = ["criterion2/codspeed"]
+
+[profile.release]
+opt-level     = 3
+lto           = "fat"
+codegen-units = 1
+strip         = "symbols"
+debug         = false
+panic         = "abort"
