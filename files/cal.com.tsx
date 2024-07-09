@@ -3006,7 +3006,7 @@ const getStripePremiumUsernameUrl = async ({
   username,
   successDestination,
 }: GetStripePremiumUsernameUrl): Promise<string | null> => {
-  // @TODO: probably want to check if stripe user email already exists? or not
+  // TODO: probably want to check if stripe user email already exists? or not
   const customer = await stripe.customers.create({
     email: userEmail,
     metadata: {
@@ -7560,7 +7560,7 @@ export const RescheduleDialog = (props: IRescheduleDialog) => {
     },
     onError() {
       showToast(t("unexpected_error_try_again"), "error");
-      // @TODO: notify sentry
+      // TODO: notify sentry
     },
   });
 
@@ -8215,7 +8215,7 @@ const SetupAvailability = (props: ISetupAvailabilityProps) => {
         } catch (error) {
           if (error instanceof Error) {
             // setError(error);
-            // @TODO: log error
+            // TODO: log error
           }
         }
       }}>
@@ -13349,7 +13349,7 @@ export const InstallAppButtonChild = ({
       <Button
         data-testid="install-app-button"
         {...props}
-        // @TODO: Overriding color and size prevent us from
+        // TODO: Overriding color and size prevent us from
         // having to duplicate InstallAppButton for now.
         color="primary"
         disabled={shouldDisableInstallation}
@@ -13365,7 +13365,7 @@ export const InstallAppButtonChild = ({
         <Button
           data-testid="install-app-button"
           {...props}
-          // @TODO: Overriding color and size prevent us from
+          // TODO: Overriding color and size prevent us from
           // having to duplicate InstallAppButton for now.
           color="primary"
           size="base">
