@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+import fs from 'fs'
 import { markdownTable }  from 'markdown-table'
 
 async function readData() {
