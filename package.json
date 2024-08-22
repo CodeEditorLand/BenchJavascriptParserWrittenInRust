@@ -1,9 +1,9 @@
 {
-	"devDependencies": {
-		"markdown-table": "3.0.3"
-	},
 	"name": "bench-javascript-parser-written-in-rust",
 	"scripts": {
 		"table": "node table.mjs"
+	},
+	"devDependencies": {
+		"markdown-table": "3.0.3"
 	}
 }
