@@ -11,23 +11,23 @@ harness = false
 [[bin]]
 name = "oxc"
 path = "src/oxc.rs"
-test = false
+test    = false
 doctest = false
 
 [[bin]]
 name = "swc"
 path = "src/swc.rs"
-test = false
+test    = false
 doctest = false
 
 [[bin]]
 name = "biome"
 path = "src/biome.rs"
-test = false
+test    = false
 doctest = false
 
 [dependencies]
-oxc = "0.30.1"
+oxc = "0.30.3"
 
 swc_ecma_parser = { version = "0.152.0", features = ["typescript"] }
 swc_ecma_ast = "0.121.0"
@@ -36,7 +36,7 @@ biome_js_parser = "0.5.7"
 biome_js_syntax = "0.5.7"
 
 num_cpus = "1.16.0"
-criterion2 = { version = "1.0.0", default-features = false }
+criterion2  = { version = "1.0.0", default-features = false }
 rayon = "1.10.0"
 mimalloc = "0.1.43"
 
@@ -44,9 +44,9 @@ mimalloc = "0.1.43"
 codspeed = ["criterion2/codspeed"]
 
 [profile.release]
-opt-level = 3
-lto = "fat"
+opt-level     = 3
+lto           = "fat"
 codegen-units = 1
-strip = "symbols"
-debug = false
-panic = "abort"
+strip         = "symbols"
+debug         = false
+panic         = "abort"
