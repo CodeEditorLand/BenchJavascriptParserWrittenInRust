@@ -1,14 +1,15 @@
 # Parser Benchmark for Oxc, Swc and Biome
 
-The purpose of this benchmark is for people who wants to evaluate and compare the performance characteristics of these parsers.
+The purpose of this benchmark is for people who wants to evaluate and compare
+the performance characteristics of these parsers.
 
 ## Summary
 
 Oxc's parser is at least 3x faster than swc and 5x faster than Biome.
 
-Please note that it is not an apple to apple comparison with Biome.
-Biome's parser [produces a CST](https://biomejs.dev/internals/architecture) instead of an AST,
-which requires a lot more work.
+Please note that it is not an apple to apple comparison with Biome. Biome's
+parser [produces a CST](https://biomejs.dev/internals/architecture) instead of
+an AST, which requires a lot more work.
 
 ## CPU
 
@@ -16,8 +17,10 @@ which requires a lot more work.
 
 [![CodSpeed Badge][codspeed-badge]][codspeed-url]
 
-[codspeed-badge]: https://img.shields.io/endpoint?url=https://codspeed.io/badge.json
-[codspeed-url]: https://codspeed.io/oxc-project/bench-javascript-parser-written-in-rust/benchmarks
+[codspeed-badge]:
+	https://img.shields.io/endpoint?url=https://codspeed.io/badge.json
+[codspeed-url]:
+	https://codspeed.io/oxc-project/bench-javascript-parser-written-in-rust/benchmarks
 
 Codspeed measures performance by cpu instructions.
 
@@ -94,17 +97,17 @@ biome 117.4 mb (1.70x)
 
 ## Setup
 
-* Uses `mimalloc` as the global allocator
-* Uses the following release profile
+-   Uses `mimalloc` as the global allocator
+-   Uses the following release profile
 
 ```toml
 [profile.release]
-opt-level     = 3
-lto           = "fat"
+opt-level = 3
+lto = "fat"
 codegen-units = 1
-strip         = "symbols"
-debug         = false
-panic         = "abort"
+strip = "symbols"
+debug = false
+panic = "abort"
 ```
 
 ### single-thread
@@ -119,11 +122,13 @@ group.bench_with_input(id, &source, |b, source| {
 
 ### no-drop
 
-This uses the [`iter_with_large_drop`](https://docs.rs/criterion/0.5.1/criterion/struct.Bencher.html#method.iter_with_large_drop) function, which does not take AST drop time into account.
-Notice there is only a 0.3ms difference for oxc, but 7ms difference for swc.
+This uses the
+[`iter_with_large_drop`](https://docs.rs/criterion/0.5.1/criterion/struct.Bencher.html#method.iter_with_large_drop)
+function, which does not take AST drop time into account. Notice there is only a
+0.3ms difference for oxc, but 7ms difference for swc.
 
-AST drop time can become a bottleneck in applications such as as bundler,
-where there are a few thousands of files need to be parsed.
+AST drop time can become a bottleneck in applications such as as bundler, where
+there are a few thousands of files need to be parsed.
 
 ```rust
 group.bench_with_input(id, &source, |b, source| {
@@ -133,7 +138,9 @@ group.bench_with_input(id, &source, |b, source| {
 
 ### parallel
 
-This benchmark uses the total number of physical cores as the total number of files to parse per bench iteration. For example it parses 6 files in parallel on my Mac i7 6 cores.
+This benchmark uses the total number of physical cores as the total number of
+files to parse per bench iteration. For example it parses 6 files in parallel on
+my Mac i7 6 cores.
 
 This can indicate the existence of global resource contention.
 
