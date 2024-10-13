@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
--   [Benchmark Results](#benchmark-results)
-    -   [typescript.js](#typescript.js)
+-   [`Benchmark Results`](#benchmark-results)
+    -   [`typescript.js`](#typescript.js)
 
 ## Benchmark Results
 
@@ -17,4 +17,4 @@
 
 ---
 
-Made with [criterion-table](https://github.com/nu11ptr/criterion-table)
+Made with [`criterion-table`](https://github.com/nu11ptr/criterion-table)
