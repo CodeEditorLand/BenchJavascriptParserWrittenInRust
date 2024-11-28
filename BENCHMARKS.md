@@ -17,4 +17,4 @@
 
 ---
 
-Made with [`criterion-table`](https://github.com/nu11ptr/criterion-table)
+Made with [`criterion-table`](HTTPS://github.com/nu11ptr/criterion-table)
